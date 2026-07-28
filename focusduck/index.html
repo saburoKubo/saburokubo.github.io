@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#dff4ec" />
+  <title>FocusDuck | 集中した時間で、アヒルと池を育てよう</title>
+  <meta
+    name="description"
+    content="FocusDuckは、集中した時間で小さなアヒルと池を育てるAndroid向け集中支援アプリです。やさしいタイマー、集中記録、池の成長をひとつに。"
+  />
+  <meta property="og:title" content="FocusDuck" />
+  <meta property="og:description" content="集中した時間で、ちいさなアヒルと池を育てよう。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://saburokubo.github.io/focusduck/" />
+  <meta property="og:image" content="https://saburokubo.github.io/focusduck/assets/pond.webp" />
+  <style>
+    :root {
+      --ink: #28423a;
+      --muted: #60776f;
+      --cream: #fffaf0;
+      --paper: rgba(255, 255, 255, .82);
+      --line: rgba(57, 117, 99, .16);
+      --green: #397563;
+      --green-dark: #28594b;
+      --blue: #58b8ce;
+      --yellow: #f6bc55;
+      --shadow: 0 22px 60px rgba(45, 100, 82, .14);
+    }
+    * { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(800px 520px at 8% 2%, rgba(112, 205, 216, .28), transparent 68%),
+        radial-gradient(680px 520px at 100% 18%, rgba(246, 188, 85, .16), transparent 68%),
+        linear-gradient(180deg, #eefaf6 0%, #fffdf7 42%, #f4fbf7 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+        "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+      line-height: 1.75;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; }
+    .shell { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 0;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green-dark);
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: .01em;
+      text-decoration: none;
+    }
+    .brand-mark {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      overflow: hidden;
+      border: 1px solid rgba(57, 117, 99, .18);
+      border-radius: 50%;
+      background: linear-gradient(180deg, #fff9d9, #bcecf1);
+      box-shadow: 0 8px 20px rgba(57, 117, 99, .12);
+    }
+    .brand-mark img {
+      position: absolute;
+      width: 44px;
+      transform: translateY(5px);
+    }
+    .nav-links { display: flex; align-items: center; gap: 8px; }
+    .nav-links a {
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background: rgba(255, 255, 255, .7);
+      color: var(--green-dark);
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, .78fr);
+      align-items: center;
+      gap: clamp(28px, 6vw, 76px);
+      padding: clamp(42px, 7vw, 88px) 0 90px;
+    }
+    .eyebrow,
+    .mini-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .64);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .05em;
+    }
+    .eyebrow::before {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--yellow);
+      content: "";
+      box-shadow: 0 0 0 5px rgba(246, 188, 85, .16);
+    }
+    h1 {
+      margin: 22px 0 18px;
+      color: #234b40;
+      font-size: clamp(40px, 6.6vw, 76px);
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+    h1 span {
+      display: block;
+      margin-top: 14px;
+      color: var(--ink);
+      font-size: clamp(22px, 3vw, 34px);
+      letter-spacing: -.015em;
+    }
+    .lead {
+      max-width: 640px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(16px, 2vw, 19px);
+    }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, .72);
+      color: var(--green-dark);
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(40, 89, 75, .08);
+    }
+    .button.primary {
+      border-color: transparent;
+      background: var(--green);
+      color: #fff;
+    }
+    .button[aria-disabled="true"] {
+      cursor: default;
+      opacity: .82;
+    }
+    .hero-note { margin: 12px 0 0; color: #789087; font-size: 12px; }
+    .pond-frame {
+      position: relative;
+      min-height: 560px;
+      overflow: hidden;
+      border: 8px solid rgba(255, 255, 255, .74);
+      border-radius: 38px;
+      background: #9edee9;
+      box-shadow: var(--shadow);
+      transform: rotate(1.5deg);
+      isolation: isolate;
+    }
+    .pond-scene {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-duck {
+      position: absolute;
+      z-index: 2;
+      left: 50%;
+      bottom: 12%;
+      width: 62%;
+      filter: drop-shadow(0 18px 18px rgba(35, 85, 72, .18));
+      transform: translateX(-50%);
+    }
+    .timer-chip {
+      position: absolute;
+      z-index: 3;
+      top: 24px;
+      left: 50%;
+      padding: 8px 16px;
+      border: 1px solid rgba(255, 255, 255, .55);
+      border-radius: 999px;
+      background: rgba(38, 66, 60, .68);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      backdrop-filter: blur(10px);
+      transform: translateX(-50%);
+    }
+    .pond-caption {
+      position: absolute;
+      z-index: 3;
+      right: 18px;
+      bottom: 18px;
+      left: 18px;
+      padding: 12px 14px;
+      border: 1px solid rgba(255, 255, 255, .65);
+      border-radius: 18px;
+      background: rgba(255, 251, 236, .84);
+      color: #3f5c52;
+      font-size: 13px;
+      font-weight: 800;
+      text-align: center;
+      backdrop-filter: blur(12px);
+    }
+    .section { padding: 84px 0; }
+    .section-head { max-width: 720px; margin-bottom: 28px; }
+    h2 {
+      margin: 12px 0 10px;
+      color: #234b40;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.25;
+      letter-spacing: -.025em;
+    }
+    .section-head p { margin: 0; color: var(--muted); }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .card {
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--paper);
+      box-shadow: 0 12px 40px rgba(47, 105, 87, .08);
+    }
+    .icon {
+      display: grid;
+      width: 50px;
+      height: 50px;
+      place-items: center;
+      border-radius: 17px;
+      background: #e1f4ec;
+      font-size: 24px;
+    }
+    .card h3 { margin: 18px 0 8px; color: #2d5b4e; font-size: 19px; }
+    .card p { margin: 0; color: var(--muted); font-size: 15px; }
+    .rhythm {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      counter-reset: rhythm;
+    }
+    .step {
+      position: relative;
+      padding: 24px 20px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, .58);
+      counter-increment: rhythm;
+    }
+    .step::before {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green);
+      color: #fff;
+      content: counter(rhythm);
+      font-size: 14px;
+      font-weight: 900;
+    }
+    .step h3 { margin: 15px 0 5px; font-size: 17px; }
+    .step p { margin: 0; color: var(--muted); font-size: 14px; }
+    .plus {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+      padding: clamp(28px, 5vw, 52px);
+      border: 1px solid rgba(246, 188, 85, .3);
+      border-radius: 32px;
+      background:
+        radial-gradient(400px 240px at 0% 0%, rgba(246, 188, 85, .25), transparent 70%),
+        rgba(255, 252, 240, .86);
+      box-shadow: var(--shadow);
+    }
+    .plus-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #8a651f;
+      font-weight: 900;
+      letter-spacing: .06em;
+    }
+    .plus h2 { margin-top: 6px; }
+    .plus-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .plus-list li {
+      padding: 13px 14px;
+      border: 1px solid rgba(138, 101, 31, .12);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, .62);
+      color: #5f644e;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .language-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 20px;
+    }
+    .language-box span {
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .62);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .final-cta {
+      padding: 72px 24px;
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      background:
+        radial-gradient(520px 280px at 50% 100%, rgba(88, 184, 206, .28), transparent 70%),
+        rgba(255, 255, 255, .66);
+      text-align: center;
+    }
+    .final-cta p { max-width: 620px; margin: 12px auto 0; color: var(--muted); }
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 30px 0 46px;
+      color: #72877f;
+      font-size: 13px;
+    }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 16px; }
+    .footer-links a { color: var(--green); font-weight: 700; }
+    @media (max-width: 840px) {
+      .hero { grid-template-columns: 1fr; padding-top: 28px; }
+      .hero-copy { text-align: center; }
+      .lead { margin-right: auto; margin-left: auto; }
+      .cta-row { justify-content: center; }
+      .pond-frame { width: min(460px, 100%); min-height: 590px; margin: 10px auto 0; transform: none; }
+      .features { grid-template-columns: 1fr; }
+      .rhythm { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .plus { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .shell { width: min(100% - 24px, 1120px); }
+      .nav { align-items: flex-start; }
+      .nav-links a:not(:last-child) { display: none; }
+      .hero { padding-bottom: 56px; }
+      h1 { font-size: clamp(38px, 13vw, 56px); }
+      h1 span { margin-top: 12px; font-size: 22px; }
+      .pond-frame { min-height: 500px; border-width: 6px; border-radius: 30px; }
+      .section { padding: 58px 0; }
+      .rhythm,
+      .plus-list { grid-template-columns: 1fr; }
+      .plus { padding: 26px 18px; border-radius: 26px; }
+      footer { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="shell">
+    <nav class="nav" aria-label="メインナビゲーション">
+      <a class="brand" href="./" aria-label="FocusDuck ホーム">
+        <span class="brand-mark" aria-hidden="true"><img src="./assets/duck.webp" alt="" /></span>
+        FocusDuck
+      </a>
+      <div class="nav-links">
+        <a href="#features">できること</a>
+        <a href="#plus">Plus</a>
+        <a href="./privacy.html">プライバシー</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">Android向け・公開準備中</span>
+          <h1>
+            FocusDuck
+            <span>集中した時間で、ちいさなアヒルと池を育てよう。</span>
+          </h1>
+          <p class="lead">
+            タイマーを始めると、アヒルも池のそばで静かに過ごします。
+            集中を終えるたびにパンくずが増え、池には草花や生き物が少しずつ訪れます。
+            勉強、仕事、読書など、毎日の「少しだけ進みたい」に寄り添う集中支援アプリです。
+          </p>
+          <div class="cta-row">
+            <span class="button primary" aria-disabled="true">Google Playで公開予定</span>
+            <a class="button" href="#features">FocusDuckを知る</a>
+          </div>
+          <p class="hero-note">ログイン不要。集中記録や池の成長は端末内に保存されます。</p>
+        </div>
+
+        <div class="pond-frame" aria-label="FocusDuckの池とアヒルのイメージ">
+          <img class="pond-scene" src="./assets/pond.webp" alt="" />
+          <span class="timer-chip">25:00</span>
+          <img class="hero-duck" src="./assets/duck.webp" alt="池のそばで蝶を見上げるFocusDuckのアヒル" />
+          <p class="pond-caption">アヒルと一緒に、ここで少しだけ進もう。</p>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="section-head">
+          <span class="mini-label">Focus gently</span>
+          <h2>集中を、育てる時間に。</h2>
+          <p>数字を追い立てるのではなく、今日できた分だけ池の景色が豊かになります。</p>
+        </div>
+        <div class="features">
+          <article class="card">
+            <div class="icon" aria-hidden="true">⏱️</div>
+            <h3>やさしい集中タイマー</h3>
+            <p>集中時間、休憩時間、目標を自分のペースに合わせて設定。中断しても責めず、また始められる言葉で迎えます。</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">🦆</div>
+            <h3>アヒルと池の成長</h3>
+            <p>卵から始まり、集中回数に合わせてアヒルと池が成長。季節や天気によって景色も静かに変化します。</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">🌿</div>
+            <h3>図鑑とパンくず交換所</h3>
+            <p>池を訪れる鳥、蝶、トンボ、カエルを図鑑に記録。集めたパンくずで池の飾りや生き物と出会えます。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <span class="mini-label">A quiet rhythm</span>
+          <h2>毎日の小さな集中が、ひとつの景色になります。</h2>
+        </div>
+        <div class="rhythm">
+          <article class="step">
+            <h3>時間を選ぶ</h3>
+            <p>基本設定やプリセットから、今日取り組める時間を選びます。</p>
+          </article>
+          <article class="step">
+            <h3>一緒に集中</h3>
+            <p>雨音などの落ち着いた音と、池のそばで集中します。</p>
+          </article>
+          <article class="step">
+            <h3>パンくずを獲得</h3>
+            <p>集中を終えると記録とパンくずが少しずつ増えます。</p>
+          </article>
+          <article class="step">
+            <h3>池が豊かに</h3>
+            <p>アヒルが育ち、草花や生き物、思い出が増えていきます。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="plus">
+        <div class="plus">
+          <div>
+            <span class="plus-badge">✦ FocusDuck Plus</span>
+            <h2>池で過ごす時間を、もう少し自分らしく。</h2>
+            <p class="lead">
+              無料版の集中体験はそのままに、広告を外し、記録や音、季節、池の飾りをさらに楽しめる買い切り版を提供予定です。
+            </p>
+          </div>
+          <ul class="plus-list">
+            <li>広告なしで静かに集中</li>
+            <li>月・年・累計の集中記録</li>
+            <li>カエルや鳥などの集中音</li>
+            <li>好きな季節への固定</li>
+            <li>複数の集中プリセット</li>
+            <li>曜日別のやさしい目標</li>
+            <li>睡蓮・ランタンなどの限定装飾</li>
+            <li>Google Playの買い切り購入</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <span class="mini-label">Made for many places</span>
+          <h2>世界の言葉で、同じ静かな池を。</h2>
+          <p>FocusDuckは、日本語と英語を含む複数言語に対応して世界向けに公開予定です。</p>
+          <div class="language-box" aria-label="対応予定言語">
+            <span>日本語</span>
+            <span>English</span>
+            <span>Deutsch</span>
+            <span>Español</span>
+            <span>Français</span>
+            <span>Bahasa Indonesia</span>
+            <span>한국어</span>
+            <span>Português (Brasil)</span>
+            <span>繁體中文</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="final-cta">
+          <span class="mini-label">Coming to Google Play</span>
+          <h2>また明日も、池で会いましょう。</h2>
+          <p>
+            FocusDuckは現在、Google Playでの公開に向けて準備を進めています。
+            公開後、このページからストアへ移動できるように更新します。
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 FocusDuck / Saburo KUBO</span>
+      <div class="footer-links">
+        <a href="./privacy.html">プライバシーポリシー</a>
+        <a href="mailto:saburo.apps@gmail.com?subject=FocusDuck%20お問い合わせ">お問い合わせ</a>
+        <a href="../">開発者サイト</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
