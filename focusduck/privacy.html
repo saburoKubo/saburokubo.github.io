@@ -8,7 +8,7 @@
   <title>FocusDuck プライバシーポリシー | Privacy Policy</title>
   <meta
     name="description"
-    content="Androidアプリ FocusDuck（com.kubosaburo.focusduck）のプライバシーポリシーです。"
+    content="Android / iOSアプリ FocusDuckのプライバシーポリシーです。"
   />
   <style>
     :root {
@@ -105,8 +105,9 @@
       </nav>
       <h1>FocusDuck プライバシーポリシー</h1>
       <p class="sub">
-        Androidアプリ「FocusDuck」（アプリID：com.kubosaburo.focusduck。以下「本アプリ」）における、
-        利用者情報の取扱いについて説明します。
+        Android / iOSアプリ「FocusDuck」における、利用者情報の取扱いについて説明します。<br />
+        Android applicationId：<code>com.kubosaburo.focusduck</code><br />
+        iOS Bundle ID：<code>com.kubosaburo.focusduck</code>
       </p>
     </div>
   </header>
@@ -115,29 +116,26 @@
     <section>
       <h2>1. 本アプリについて</h2>
       <p>
-        FocusDuckは、集中時間を記録しながら、小さなアヒルと池の成長を楽しむ集中支援アプリです。
+        FocusDuckは、集中時間を記録しながら、小さなアヒルと池の成長を楽しむ、AndroidおよびiOS向けの集中支援アプリです。
         現在、本アプリには独自のアカウント登録機能や、運営者が管理するサーバーへのログイン・同期機能はありません。
+        Firebase Analytics、Crashlytics、Sentryなどの独自解析・クラッシュ収集SDKは使用していません。
       </p>
     </section>
 
     <section>
       <h2>2. 端末内に保存するデータ</h2>
-      <p>本アプリは、機能の提供と状態の保持のため、次の情報をアプリのローカルデータとして保存します。</p>
-      <ul>
-        <li>集中時間、集中回数、時間帯別・日別の集中記録</li>
-        <li>パンくず、アヒルと池の成長状態、池の思い出</li>
-        <li>図鑑で見つけた生き物、入手・配置した池の飾り</li>
-        <li>任意で設定したアヒルの名前</li>
-        <li>集中時間のプリセット、休憩タイマー、集中音、音量、季節、一日の目標などの設定</li>
-        <li>使い方画面や各種案内の表示状態、広告の表示頻度を管理するための状態</li>
-      </ul>
+      <p>
+        集中記録、セッション回数、アヒルの名前、アプリ設定、一日の目標、池や図鑑の進み、交換所の所有状態、
+        Plusの利用状態など、アプリの利用記録や設定は主に端末内に保存されます。
+      </p>
       <p>
         これらのデータを、FocusDuckの運営者が独自に収集するサーバーへ送信する機能はありません。
         アプリのデータを消去するか、本アプリをアンインストールすると、端末内のデータは削除されます。
       </p>
       <p>
-        ただし、端末でAndroidのバックアップ機能が有効な場合、これらのデータがOSのバックアップまたは復元の対象になることがあります。
-        その取扱いは、端末の設定およびGoogleのサービスに従います。
+        端末のOSバックアップ設定によっては、これらのデータがバックアップまたは復元の対象になることがあります。
+        AndroidではGoogle / OSのバックアップ設定、iOSではiCloudまたは端末バックアップの設定に依存します。
+        これはFocusDuck独自のクラウド同期ではありません。
       </p>
     </section>
 
@@ -157,6 +155,7 @@
       <p>
         本アプリの運営者は、Google Mobile Ads SDKを通じて処理される情報を、
         独自の利用者プロフィール作成や、氏名・住所・メールアドレス等の収集に利用していません。
+        運営者が広告識別子の独自データベースを保持するものではありません。
       </p>
     </section>
 
@@ -166,55 +165,68 @@
         本アプリは、Google User Messaging Platform（UMP）を利用しています。
         EEA（欧州経済領域）、英国、スイスなど、同意またはプライバシー選択の提示が必要とGoogleにより判定された地域・状況では、
         広告に関する選択画面を表示し、その選択内容をGoogleの仕組みにより管理します。
-      </p>
-      <p>
         Googleによりプライバシー選択の再表示が必要と判定されている場合は、
         アプリ内の設定画面にある「プライバシー設定」から選択内容を確認・変更できます。
+      </p>
+      <p>
+        iOSでは、広告および同意の状況に応じて、Appleのトラッキング許可に関する仕組みが利用される場合があります。
+        アプリ本体からApp Tracking Transparencyの許可ダイアログを直接呼び出す実装はありません。
+        Google広告サービスによるデータの取扱いは、Googleのポリシーに従います。
+        FocusDuckが必ずIDFAを収集する、という意味ではありません。
       </p>
     </section>
 
     <section>
       <h2>5. FocusDuck Plusとお支払い</h2>
       <p>
-        広告非表示や追加機能を提供する買い切り商品「FocusDuck Plus」の購入には、
-        <strong>Google Play Billing</strong>を利用します。
-        購入処理、購入状態の確認、購入の復元および必要な承認処理はGoogle Playを通じて行われます。
+        広告非表示や追加機能を提供する買い切り商品「FocusDuck Plus」の購入処理は、各プラットフォームのストアを通じて行われます。
+        Androidでは<strong>Google Play の課金</strong>、iOSでは<strong>App Store（StoreKit）</strong>を利用します。
+        いずれも非消費型の買い切りであり、定期購読ではありません。
       </p>
       <p>
-        FocusDuckの運営者が、クレジットカード番号や銀行口座情報などの決済情報を直接取得することはありません。
-        本アプリは、Google Playから提供される購入状態を確認し、Plus機能を利用できるかを判定します。
+        FocusDuckの運営者が、クレジットカード番号や銀行口座情報などの決済情報を直接取得・保存することはありません。
+        本アプリは、各ストアから提供される購入状態を確認し、Plus機能を利用できるかを判定します。
+        決済情報の取扱いには、各ストアのプライバシーポリシーも適用されます。
       </p>
     </section>
 
     <section>
-      <h2>6. 第三者サービス</h2>
-      <p>本アプリでは、次のGoogleのサービスおよびSDKを利用します。</p>
+      <h2>6. 通知</h2>
+      <p>
+        本アプリの通知は、端末上のローカル通知です。運営者のプッシュ通知サーバーはありません。
+        Androidでは集中完了の通知などに加え、正確な時刻での通知に関するOS権限が関係する場合があります。
+        iOSではUser Notificationsの仕組みを利用します。
+      </p>
+    </section>
+
+    <section>
+      <h2>7. 第三者サービス</h2>
+      <p>本アプリでは、次のサービスおよびSDKを利用します。</p>
       <ul class="service-list">
         <li>Google AdMob / Google Mobile Ads SDK：広告の配信、測定、不正防止等</li>
         <li>Google User Messaging Platform：広告に関する同意・プライバシー選択の管理</li>
-        <li>Google Play / Google Play Billing：アプリの配信、購入処理、購入状態の確認・復元</li>
+        <li>Google Play / Google Play の課金：Android向けの配信、購入処理、購入状態の確認・復元</li>
+        <li>Apple App Store / StoreKit：iOS向けの配信、購入処理、購入状態の確認・復元</li>
       </ul>
-      <p>これらのサービスによる情報の取扱いについては、次のGoogle公式ページもご確認ください。</p>
+      <p>これらのサービスによる情報の取扱いについては、次の公式ページもご確認ください。</p>
       <ul class="service-list">
         <li>
-          <a href="https://policies.google.com/privacy" rel="noopener noreferrer">
-            Google プライバシーポリシー
-          </a>
+          <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google プライバシーポリシー</a>
         </li>
         <li>
-          <a href="https://policies.google.com/technologies/ads" rel="noopener noreferrer">
-            Googleによる広告でのデータ利用
-          </a>
+          <a href="https://policies.google.com/technologies/ads" rel="noopener noreferrer">Googleによる広告でのデータ利用</a>
         </li>
         <li>
-          <a href="https://developers.google.com/admob/android/privacy" rel="noopener noreferrer">
-            Google Mobile Ads SDKのプライバシー対応
-          </a>
+          <a href="https://support.google.com/admob/answer/6128543" rel="noopener noreferrer">Google Mobile Ads SDKのプライバシー</a>
         </li>
         <li>
-          <a href="https://play.google.com/intl/ja_jp/about/play-terms/" rel="noopener noreferrer">
-            Google Play 利用規約
-          </a>
+          <a href="https://play.google.com/intl/ja_jp/about/play-terms/" rel="noopener noreferrer">Google Play 利用規約</a>
+        </li>
+        <li>
+          <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple プライバシーポリシー</a>
+        </li>
+        <li>
+          <a href="https://www.apple.com/legal/internet-services/itunes/" rel="noopener noreferrer">Apple メディアサービス利用規約</a>
         </li>
       </ul>
       <p>
@@ -223,7 +235,7 @@
     </section>
 
     <section>
-      <h2>7. 個人を直接特定する情報</h2>
+      <h2>8. 個人を直接特定する情報</h2>
       <p>
         現在、本アプリには、氏名、住所、電話番号、メールアドレス等をFocusDuckの運営者が独自に入力・収集する機能はありません。
         任意で設定するアヒルの名前は、アプリのローカルデータとして扱われます。
@@ -231,15 +243,16 @@
     </section>
 
     <section>
-      <h2>8. お子様による利用</h2>
+      <h2>9. お子様による利用</h2>
       <p>
         お子様が本アプリを利用する場合は、保護者の方が本ポリシー、
-        Google Play上の対象年齢に関する表示、およびGoogleの各サービスに関する説明をご確認ください。
+        各ストアに表示される対象年齢に関する情報、および広告・ストア提供者の説明をご確認ください。
+        特定ストアのレーティングを、全プラットフォーム共通の年齢ルールとして定めるものではありません。
       </p>
     </section>
 
     <section>
-      <h2>9. セキュリティ</h2>
+      <h2>10. セキュリティ</h2>
       <p>
         本アプリで扱う情報について、実装内容に応じた適切な管理に努めます。
         ただし、端末、OS、通信および第三者サービスを含むすべての環境における完全な安全性を保証するものではありません。
@@ -247,7 +260,7 @@
     </section>
 
     <section>
-      <h2>10. 本ポリシーの変更</h2>
+      <h2>11. 本ポリシーの変更</h2>
       <p>
         アプリの機能、利用するサービスまたは法令等の変更に応じて、本ポリシーを変更することがあります。
         変更後の内容は、このページに掲載します。
@@ -255,8 +268,8 @@
     </section>
 
     <section>
-      <h2>11. お問い合わせ</h2>
-      <p>本ポリシーに関するお問い合わせは、既存の開発者問い合わせ先までお願いいたします。</p>
+      <h2>12. お問い合わせ</h2>
+      <p>本ポリシーに関するお問い合わせは、次の連絡先までお願いいたします。</p>
       <ul>
         <li>運営者：久保三朗</li>
         <li>
@@ -267,11 +280,10 @@
 
     <section>
       <h2>最終更新日</h2>
-      <p><time datetime="2026-07-28">2026年7月28日</time></p>
+      <p><time datetime="2026-08-25">2026年8月25日</time></p>
     </section>
   </main>
-
-  <footer>
+<footer>
     <p>© FocusDuck / Saburo KUBO</p>
     <p>このページはGitHub Pagesで公開されています。<a href="./privacy-en.html" lang="en">English</a></p>
   </footer>

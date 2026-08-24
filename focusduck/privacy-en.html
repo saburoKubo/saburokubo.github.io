@@ -8,7 +8,7 @@
   <title>FocusDuck Privacy Policy</title>
   <meta
     name="description"
-    content="Privacy Policy for the FocusDuck Android app (com.kubosaburo.focusduck)."
+    content="Privacy Policy for FocusDuck on Android and iOS."
   />
   <style>
     :root {
@@ -105,8 +105,9 @@
       </nav>
       <h1>FocusDuck Privacy Policy</h1>
       <p class="sub">
-        This policy explains how information is handled in the Android app FocusDuck
-        (application ID: com.kubosaburo.focusduck; referred to below as “the App”).
+        This policy explains how information is handled in FocusDuck for Android and iOS.<br />
+        Android applicationId: <code>com.kubosaburo.focusduck</code><br />
+        iOS Bundle ID: <code>com.kubosaburo.focusduck</code>
       </p>
     </div>
   </header>
@@ -115,29 +116,26 @@
     <section>
       <h2>1. About the App</h2>
       <p>
-        FocusDuck is a focus-support app where users record focused time while enjoying the growth of a little duck and its pond.
+        FocusDuck is a focus-support app for Android and iOS where users record focused time while enjoying the growth of a little duck and its pond.
         The App currently has no proprietary account registration system and no login or synchronization service operated on the developer’s own servers.
+        The App does not use Firebase Analytics, Crashlytics, or Sentry.
       </p>
     </section>
 
     <section>
       <h2>2. Data Stored on Your Device</h2>
-      <p>The App stores the following information locally to provide its features and retain its state:</p>
-      <ul>
-        <li>Focus duration, number of sessions, and focus records by time period and day</li>
-        <li>Breadcrumbs, duck and pond growth, and pond memories</li>
-        <li>Creatures recorded in the creature book and pond decorations obtained or placed</li>
-        <li>The optional name given to the duck</li>
-        <li>Settings such as focus presets, rest timer, focus sounds, volume, season, and daily goals</li>
-        <li>Status used to manage onboarding, in-app guidance, and the frequency of ad display</li>
-      </ul>
+      <p>
+        Focus records, session counts, the optional duck name, app settings, daily goals, pond and collection progress,
+        Exchange ownership, and locally reflected Plus status are stored primarily on the device.
+      </p>
       <p>
         The App does not include a feature that sends this data to a server independently operated by the FocusDuck developer.
         Deleting the App’s data or uninstalling the App deletes the data stored locally on the device.
       </p>
       <p>
-        If Android backup is enabled on the device, some local data may be included in an operating-system backup or restoration.
-        Such processing is governed by the device settings and Google’s services.
+        Depending on the device’s operating-system backup settings, some of this data may be included in a backup or restoration.
+        On Android this depends on Google / OS backup settings. On iOS this depends on iCloud or device backup settings.
+        This is not a FocusDuck-operated cloud sync service.
       </p>
     </section>
 
@@ -155,7 +153,8 @@
       </p>
       <p>
         The FocusDuck developer does not use information processed through the Google Mobile Ads SDK
-        to build an independent user profile or to collect names, postal addresses, or email addresses.
+        to build an independent user profile or to collect names, postal addresses, or email addresses,
+        and does not operate a separate database of advertising identifiers.
       </p>
     </section>
 
@@ -165,35 +164,51 @@
         The App uses Google User Messaging Platform (UMP).
         Where Google determines that consent or privacy choices must be presented, including certain circumstances in the EEA, the United Kingdom,
         and Switzerland, the App displays an advertising choices form and Google’s systems manage the user’s selections.
-      </p>
-      <p>
         When Google determines that privacy options must remain available, users can review or change their selections through
         “Privacy settings” in the App’s settings screen.
+      </p>
+      <p>
+        On iOS, Apple’s tracking-permission mechanisms may be used depending on advertising and consent status.
+        The App does not call the App Tracking Transparency prompt directly.
+        Data handling by Google’s advertising services follows Google’s policies.
+        This does not mean that FocusDuck always collects the IDFA.
       </p>
     </section>
 
     <section>
       <h2>5. FocusDuck Plus and Payments</h2>
       <p>
-        The App uses <strong>Google Play Billing</strong> for the one-time FocusDuck Plus product,
-        which provides an ad-free experience and additional features.
-        Purchase processing, purchase status checks, restoration, and required acknowledgment are handled through Google Play.
+        Purchases of FocusDuck Plus, a one-time unlock for an ad-free experience and additional features,
+        are processed through the store on each platform.
+        Android uses <strong>Google Play billing</strong>. iOS uses the <strong>App Store (StoreKit)</strong>.
+        Plus is a non-consumable one-time purchase, not a subscription.
       </p>
       <p>
-        The FocusDuck developer does not directly obtain payment information such as credit card numbers or bank account details.
-        The App checks the purchase status provided by Google Play to determine whether Plus features are available.
+        The FocusDuck developer does not directly obtain or store payment information such as credit card numbers or bank account details.
+        The App checks the purchase status provided by the relevant store to determine whether Plus features are available.
+        The store’s privacy policy also applies to payment information.
       </p>
     </section>
 
     <section>
-      <h2>6. Third-Party Services</h2>
-      <p>The App uses the following Google services and SDKs:</p>
+      <h2>6. Notifications</h2>
+      <p>
+        Notifications in the App are local device notifications. The developer does not operate a push-notification server.
+        On Android, completion notifications may involve OS permissions related to exact-time alarms.
+        On iOS, the App uses User Notifications.
+      </p>
+    </section>
+
+    <section>
+      <h2>7. Third-Party Services</h2>
+      <p>The App uses the following services and SDKs:</p>
       <ul class="service-list">
         <li>Google AdMob / Google Mobile Ads SDK: ad delivery, measurement, fraud prevention, and related functions</li>
         <li>Google User Messaging Platform: management of advertising consent and privacy choices</li>
-        <li>Google Play / Google Play Billing: app distribution, purchase processing, entitlement checks, and restoration</li>
+        <li>Google Play / Google Play billing: Android distribution, purchase processing, entitlement checks, and restoration</li>
+        <li>Apple App Store / StoreKit: iOS distribution, purchase processing, entitlement checks, and restoration</li>
       </ul>
-      <p>For more information about how these services handle information, please review the following official Google pages:</p>
+      <p>For more information about how these services handle information, please review the following official pages:</p>
       <ul class="service-list">
         <li>
           <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Privacy Policy</a>
@@ -202,10 +217,16 @@
           <a href="https://policies.google.com/technologies/ads" rel="noopener noreferrer">How Google uses information for advertising</a>
         </li>
         <li>
-          <a href="https://developers.google.com/admob/android/privacy" rel="noopener noreferrer">Privacy for Google Mobile Ads SDK on Android</a>
+          <a href="https://support.google.com/admob/answer/6128543" rel="noopener noreferrer">Privacy for Google Mobile Ads SDK</a>
         </li>
         <li>
           <a href="https://play.google.com/intl/en/about/play-terms/" rel="noopener noreferrer">Google Play Terms of Service</a>
+        </li>
+        <li>
+          <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple Privacy Policy</a>
+        </li>
+        <li>
+          <a href="https://www.apple.com/legal/internet-services/itunes/" rel="noopener noreferrer">Apple Media Services Terms</a>
         </li>
       </ul>
       <p>
@@ -215,7 +236,7 @@
     </section>
 
     <section>
-      <h2>7. Directly Identifying Information</h2>
+      <h2>8. Directly Identifying Information</h2>
       <p>
         The App currently has no feature through which the FocusDuck developer independently requests or collects
         the user’s name, postal address, telephone number, or email address.
@@ -224,15 +245,16 @@
     </section>
 
     <section>
-      <h2>8. Children</h2>
+      <h2>9. Children</h2>
       <p>
         If a child uses the App, a parent or guardian should review this policy,
-        the age-related information shown on Google Play, and the information provided by the relevant Google services.
+        the age-related information shown on the relevant store listing, and the information provided by advertising and store providers.
+        A rating shown on one store is not stated here as a single age rule for every platform.
       </p>
     </section>
 
     <section>
-      <h2>9. Security</h2>
+      <h2>10. Security</h2>
       <p>
         Reasonable efforts are made to manage information handled by the App appropriately for the implemented features.
         However, complete security cannot be guaranteed across every device, operating system, network, and third-party service.
@@ -240,7 +262,7 @@
     </section>
 
     <section>
-      <h2>10. Changes to This Policy</h2>
+      <h2>11. Changes to This Policy</h2>
       <p>
         This policy may be changed when the App’s features, third-party services, or applicable laws change.
         The revised policy will be published on this page.
@@ -248,7 +270,7 @@
     </section>
 
     <section>
-      <h2>11. Contact</h2>
+      <h2>12. Contact</h2>
       <p>For questions about this policy, please contact:</p>
       <ul>
         <li>Developer: Saburo Kubo</li>
@@ -261,11 +283,10 @@
 
     <section>
       <h2>Last Updated</h2>
-      <p><time datetime="2026-07-28">July 28, 2026</time></p>
+      <p><time datetime="2026-08-25">August 25, 2026</time></p>
     </section>
   </main>
-
-  <footer>
+<footer>
     <p>© FocusDuck / Saburo KUBO</p>
     <p>This page is published through GitHub Pages.</p>
   </footer>
