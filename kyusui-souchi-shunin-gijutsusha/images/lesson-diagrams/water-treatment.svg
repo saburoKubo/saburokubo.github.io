@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1480" viewBox="0 0 900 1480" role="img" aria-labelledby="title desc">
+  <title id="title">急速ろ過方式の浄水処理と各工程の役割</title>
+  <desc id="desc">原水に凝集剤を加えて微粒子をフロックにし、沈殿と砂ろ過で濁質を取り除き、塩素消毒で病原微生物を不活化する標準的な流れ。水源や施設により工程は異なる。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f2f8ff"/><stop offset="1" stop-color="#e7f3f5"/></linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6fc4e8"/><stop offset="1" stop-color="#2897c6"/></linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#18344a" flood-opacity=".10"/></filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1 1L10 6L1 11" fill="none" stroke="#47758a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  </defs>
+  <rect width="900" height="1480" rx="34" fill="url(#bg)"/>
+  <text x="54" y="76" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="40" font-weight="700" style="fill:#17364a">水を、きれいにする順番</text>
+  <text x="56" y="120" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="25" style="fill:#547184">急速ろ過方式の代表例　※水源や施設により異なります</text>
+
+  <g filter="url(#shadow)">
+    <rect x="48" y="158" width="804" height="218" rx="26" fill="#fff"/>
+    <rect x="48" y="412" width="804" height="218" rx="26" fill="#fff"/>
+    <rect x="48" y="666" width="804" height="218" rx="26" fill="#fff"/>
+    <rect x="48" y="920" width="804" height="218" rx="26" fill="#fff"/>
+  </g>
+  <path d="M450 380V402M450 634V656M450 888V910" fill="none" stroke="#47758a" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g font-family="-apple-system,BlinkMacSystemFont,sans-serif">
+    <circle cx="94" cy="207" r="29" fill="#dff1fa"/><text x="94" y="217" text-anchor="middle" font-size="27" font-weight="700" style="fill:#26779c">1</text>
+    <text x="145" y="217" font-size="34" font-weight="700" style="fill:#17364a">凝集して、まとめる</text>
+    <text x="78" y="276" font-size="27" style="fill:#526b7b">凝集剤と撹拌で、細かな濁質を</text>
+    <text x="78" y="314" font-size="27" style="fill:#526b7b">大きなかたまり（フロック）に。</text>
+    <rect x="78" y="332" width="744" height="28" rx="14" fill="#e9f7fc"/>
+    <path d="M104 346H794" stroke="#55aed1" stroke-width="5" stroke-linecap="round"/>
+    <g fill="#f0a943"><circle cx="300" cy="346" r="10"/><circle cx="456" cy="346" r="12"/><circle cx="625" cy="346" r="9"/></g>
+
+    <circle cx="94" cy="461" r="29" fill="#dff1fa"/><text x="94" y="471" text-anchor="middle" font-size="27" font-weight="700" style="fill:#26779c">2</text>
+    <text x="145" y="471" font-size="34" font-weight="700" style="fill:#17364a">沈めて、分ける</text>
+    <text x="78" y="530" font-size="27" style="fill:#526b7b">重力でフロックを沈殿させ、</text>
+    <text x="78" y="568" font-size="27" style="fill:#526b7b">後のろ過にかかる負担を軽く。</text>
+    <path d="M108 584H792V608L450 622L108 608Z" fill="#e9f7fc" stroke="#b5dce9" stroke-width="2"/>
+    <path d="M112 593H788" stroke="#55aed1" stroke-width="5"/>
+    <g fill="#f0a943"><circle cx="268" cy="603" r="7"/><circle cx="374" cy="610" r="9"/><circle cx="486" cy="605" r="7"/><circle cx="610" cy="612" r="9"/></g>
+
+    <circle cx="94" cy="715" r="29" fill="#dff1fa"/><text x="94" y="725" text-anchor="middle" font-size="27" font-weight="700" style="fill:#26779c">3</text>
+    <text x="145" y="725" font-size="34" font-weight="700" style="fill:#17364a">砂などで、こし取る</text>
+    <text x="78" y="784" font-size="27" style="fill:#526b7b">急速ろ過で、沈殿後に残った</text>
+    <text x="78" y="822" font-size="27" style="fill:#526b7b">細かな濁質を捕捉します。</text>
+    <rect x="78" y="840" width="744" height="28" rx="14" fill="#e9f7fc"/>
+    <path d="M80 849H820" stroke="#55aed1" stroke-width="5"/>
+    <path d="M80 858H820V866H80Z" fill="#d6c39c"/>
+    <g fill="#f0a943"><circle cx="251" cy="846" r="5"/><circle cx="424" cy="848" r="6"/><circle cx="604" cy="845" r="4"/></g>
+
+    <circle cx="94" cy="969" r="29" fill="#e3f4e9"/><text x="94" y="979" text-anchor="middle" font-size="27" font-weight="700" style="fill:#3d875b">4</text>
+    <text x="145" y="979" font-size="34" font-weight="700" style="fill:#17364a">塩素で、消毒する</text>
+    <text x="78" y="1038" font-size="27" style="fill:#526b7b">病原微生物を不活化して、</text>
+    <text x="78" y="1076" font-size="27" style="fill:#526b7b">水道水の衛生を保ちます。</text>
+    <rect x="78" y="1094" width="744" height="28" rx="14" fill="#edf8f1"/>
+    <path d="M102 1108H798" stroke="#55aed1" stroke-width="5" stroke-linecap="round"/>
+    <g fill="#a85068"><circle cx="314" cy="1108" r="8"/><circle cx="450" cy="1108" r="8"/><circle cx="586" cy="1108" r="8"/></g>
+    <g stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M308 1102l12 12m0-12l-12 12"/><path d="M444 1102l12 12m0-12l-12 12"/><path d="M580 1102l12 12m0-12l-12 12"/></g>
+  </g>
+
+  <rect x="48" y="1175" width="804" height="112" rx="22" fill="#17364a"/>
+  <text x="78" y="1218" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="25" font-weight="700" style="fill:#fff">ここがポイント</text>
+  <text x="78" y="1258" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="23" style="fill:#fff">凝集・沈殿・ろ過＝濁質を除去　／　消毒＝微生物を不活化</text>
+  <text x="58" y="1340" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="22" font-weight="600" style="fill:#547184">活性炭・オゾンなどを追加する場合もあります（原水に応じて選択）。</text>
+</svg>

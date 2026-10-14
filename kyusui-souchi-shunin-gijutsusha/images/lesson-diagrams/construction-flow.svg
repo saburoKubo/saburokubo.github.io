@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1740" viewBox="0 0 900 1740" role="img" aria-labelledby="title desc">
+  <title id="title">給水装置工事の全体フロー</title>
+  <desc id="desc">事前調査から設計、申請、施工、完成確認と引渡しまでを、担当者と確認内容とともに順に示す縦型図。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f3f7ff"/><stop offset="1" stop-color="#eff8f5"/></linearGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#183a70"/><stop offset="1" stop-color="#167b79"/></linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#183a70" flood-opacity=".10"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#83a9b3"/></marker>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif}
+      .title{font-size:34px;font-weight:800;fill:#fff}.head{font-size:25px;font-weight:800;fill:#1b3552}.body{font-size:19px;fill:#53687d}.role{font-size:16px;font-weight:700}
+    </style>
+  </defs>
+  <rect width="900" height="1740" rx="38" fill="url(#bg)"/>
+  <rect x="38" y="36" width="824" height="142" rx="28" fill="url(#hero)"/>
+  <text x="68" y="83" font-size="18" font-weight="700" style="fill:#b9e7e0">調べる → 設計する → 申請する → 施工する → 確認・引渡し</text>
+  <text x="68" y="137" class="title">給水装置工事の標準的な進め方</text>
+
+  <path d="M94 420V447M94 694V721M94 968V995M94 1242V1269" stroke="#83a9b3" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="46" y="198" width="808" height="222" rx="24" fill="#fff"/>
+    <rect x="46" y="472" width="808" height="222" rx="24" fill="#fff"/>
+    <rect x="46" y="746" width="808" height="222" rx="24" fill="#fff"/>
+    <rect x="46" y="1020" width="808" height="222" rx="24" fill="#fff"/>
+    <rect x="46" y="1294" width="808" height="222" rx="24" fill="#fff"/>
+  </g>
+
+  <g>
+    <circle cx="94" cy="246" r="28" fill="#e6f0ff"/><text x="94" y="255" text-anchor="middle" font-size="24" font-weight="800" style="fill:#2869b1">1</text>
+    <text x="140" y="254" class="head">事前調査</text>
+    <rect x="590" y="224" width="230" height="36" rx="18" fill="#eaf2ff"/><text x="705" y="248" text-anchor="middle" class="role" style="fill:#315e91">申込者・工事事業者</text>
+    <text x="76" y="318" class="body">使用目的、既設設備、配水管、現地・道路を確認。</text>
+    <text x="76" y="352" class="body">他の埋設物も調べ、工事条件をつかみます。</text>
+
+    <circle cx="94" cy="520" r="28" fill="#e4f7f1"/><text x="94" y="529" text-anchor="middle" font-size="24" font-weight="800" style="fill:#19775d">2</text>
+    <text x="140" y="528" class="head">設計・図面作成</text>
+    <rect x="590" y="498" width="230" height="36" rx="18" fill="#e6f5ef"/><text x="705" y="522" text-anchor="middle" class="role" style="fill:#28715c">指定工事事業者</text>
+    <text x="76" y="592" class="body">給水方式・管径・経路・材料を選び、図面にまとめる。</text>
+    <text x="76" y="626" class="body">給水装置の基準と、地域の施工要領を確認します。</text>
+
+    <circle cx="94" cy="794" r="28" fill="#fff1dd"/><text x="94" y="803" text-anchor="middle" font-size="24" font-weight="800" style="fill:#aa6718">3</text>
+    <text x="140" y="802" class="head">申請・協議・必要な承認</text>
+    <rect x="590" y="772" width="230" height="36" rx="18" fill="#fff3e3"/><text x="705" y="796" text-anchor="middle" class="role" style="fill:#95601e">担当水道事業者</text>
+    <text x="76" y="866" class="body">地域の手順に沿って申請し、必要な協議・承認を進める。</text>
+    <text x="76" y="900" class="body">施工開始時期は、審査・事業者の指示に従います。</text>
+
+    <circle cx="94" cy="1068" r="28" fill="#f0eaff"/><text x="94" y="1077" text-anchor="middle" font-size="24" font-weight="800" style="fill:#6746a9">4</text>
+    <text x="140" y="1076" class="head">施工・工程管理</text>
+    <rect x="590" y="1046" width="230" height="36" rx="18" fill="#f1ecff"/><text x="705" y="1070" text-anchor="middle" class="role" style="fill:#6549a2">主任技術者・施工者</text>
+    <text x="76" y="1140" class="body">申請内容を守り、衛生・接合・材料を確認。</text>
+    <text x="76" y="1174" class="body">隠蔽される部分も確認・記録して工程を管理します。</text>
+
+    <circle cx="94" cy="1342" r="28" fill="#e3f5f5"/><text x="94" y="1351" text-anchor="middle" font-size="24" font-weight="800" style="fill:#167b79">5</text>
+    <text x="140" y="1350" class="head">完成確認・記録・引渡し</text>
+    <rect x="590" y="1320" width="230" height="36" rx="18" fill="#e5f5f4"/><text x="705" y="1344" text-anchor="middle" class="role" style="fill:#176f6d">主任技術者・事業者</text>
+    <text x="76" y="1414" class="body">図面と現場、通水・器具の作動などを照合。</text>
+    <text x="76" y="1448" class="body">地域の要領に沿って提出し、記録とともに引き渡します。</text>
+  </g>
+
+  <rect x="46" y="1540" width="808" height="156" rx="24" fill="#173850"/>
+  <text x="76" y="1584" font-size="21" font-weight="750" style="fill:#fff">地域や工事内容で違うところ</text>
+  <text x="76" y="1624" font-size="17" style="fill:#E1EBF1">申請書・承認・検査の細目は、担当水道事業者の条例・規程・指示を確認。</text>
+  <text x="76" y="1662" font-size="17" style="fill:#E1EBF1">国の標準様式は技術的助言です。ここでは標準的な流れを示しています。</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1720" role="img" aria-labelledby="title desc" fill="#15243b">
+  <title id="title">建物への給水方式</title>
+  <desc id="desc">直結直圧式、直結増圧式、受水槽式、直結と受水槽の併用式の水の流れと特徴を縦に比較し、方式は建物条件・水道事業者の供給能力と基準を考慮して選ぶことを示す。</desc>
+  <defs>
+    <marker id="flowArrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0 0L12 6L0 12Z" fill="#1686d9"/></marker>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Yu Gothic',sans-serif;}.bg{fill:#f3f7fb}.card{fill:#fff;stroke:#d9e4ef;stroke-width:2}.title{font-size:32px;font-weight:750}.sub{font-size:18px;fill:#52647b}.head{font-size:23px;font-weight:750}.body{font-size:18px;font-weight:650}.small{font-size:16px;fill:#52647b}.block{font-size:17px;font-weight:700}
+    </style>
+  </defs>
+  <rect width="900" height="1720" rx="30" class="bg"/>
+  <text x="48" y="72" class="title">建物への給水方式を比べる</text>
+  <text x="50" y="112" class="sub">水圧・高さ・水量・用途・維持管理を合わせて選びます。</text>
+  <text x="50" y="143" class="sub">まずは、水がどこを通って建物に届くかを見てみよう。</text>
+
+  <rect x="40" y="175" width="820" height="270" rx="22" class="card"/>
+  <rect x="40" y="175" width="820" height="62" rx="22" fill="#e9f7f1"/>
+  <text x="76" y="216" class="head">1｜直結直圧式</text>
+  <rect x="76" y="266" width="170" height="62" rx="16" fill="#dff1ff"/><text x="161" y="305" text-anchor="middle" class="block">配水管</text>
+  <path d="M258 297h154" stroke="#1686d9" stroke-width="7" marker-end="url(#flowArrow)"/>
+  <rect x="430" y="266" width="190" height="62" rx="16" fill="#edf3f8"/><text x="525" y="305" text-anchor="middle" class="block">建物の給水設備</text>
+  <text x="76" y="370" class="body">配水管の水圧を利用して、建物へ直接給水</text>
+  <text x="76" y="408" class="small">配水圧や建物条件が合うか確認します。</text>
+
+  <rect x="40" y="465" width="820" height="270" rx="22" class="card"/>
+  <rect x="40" y="465" width="820" height="62" rx="22" fill="#eaf4ff"/>
+  <text x="76" y="506" class="head">2｜直結増圧式</text>
+  <rect x="76" y="556" width="150" height="62" rx="16" fill="#dff1ff"/><text x="151" y="595" text-anchor="middle" class="block">配水管</text>
+  <path d="M238 587h58" stroke="#1686d9" stroke-width="7" marker-end="url(#flowArrow)"/>
+  <rect x="314" y="556" width="205" height="62" rx="16" fill="#eaf4ff" stroke="#83b9e3" stroke-width="2"/><text x="416" y="595" text-anchor="middle" class="block">増圧設備</text>
+  <path d="M531 587h58" stroke="#1686d9" stroke-width="7" marker-end="url(#flowArrow)"/>
+  <rect x="607" y="556" width="185" height="62" rx="16" fill="#edf3f8"/><text x="699" y="595" text-anchor="middle" class="block">建物の給水設備</text>
+  <text x="76" y="660" class="body">増圧設備で、不足する圧力を補う</text>
+  <text x="76" y="698" class="small">採用条件・設備要件は、水道事業者の基準を確認。</text>
+
+  <rect x="40" y="755" width="820" height="270" rx="22" class="card"/>
+  <rect x="40" y="755" width="820" height="62" rx="22" fill="#fff4e9"/>
+  <text x="76" y="796" class="head">3｜受水槽式</text>
+  <rect x="76" y="846" width="135" height="62" rx="16" fill="#dff1ff"/><text x="143" y="885" text-anchor="middle" class="block">配水管</text>
+  <path d="M223 877h34" stroke="#1686d9" stroke-width="7" marker-end="url(#flowArrow)"/>
+  <rect x="271" y="846" width="145" height="62" rx="16" fill="#eaf4ff" stroke="#83b9e3" stroke-width="2"/><text x="343" y="885" text-anchor="middle" class="block">受水槽</text>
+  <path d="M428 877h34" stroke="#1686d9" stroke-width="7" marker-end="url(#flowArrow)"/>
+  <rect x="476" y="846" width="145" height="62" rx="16" fill="#f0f2f5"/><text x="548" y="885" text-anchor="middle" class="block">ポンプ等</text>
+  <path d="M633 877h34" stroke="#1686d9" stroke-width="7" marker-end="url(#flowArrow)"/>
+  <rect x="681" y="846" width="111" height="62" rx="16" fill="#edf3f8"/><text x="736" y="885" text-anchor="middle" class="block">建物</text>
+  <text x="76" y="950" class="body">いったん貯留し、槽以下はポンプ等で給水</text>
+  <text x="76" y="988" class="small">貯水槽以下の設備管理も計画に含めます。</text>
+
+  <rect x="40" y="1045" width="820" height="320" rx="22" class="card"/>
+  <rect x="40" y="1045" width="820" height="62" rx="22" fill="#f1efff"/>
+  <text x="76" y="1086" class="head">4｜直結・受水槽併用式</text>
+  <rect x="76" y="1136" width="160" height="62" rx="16" fill="#dff1ff"/><text x="156" y="1175" text-anchor="middle" class="block">配水管</text>
+  <path d="M248 1167h54M302 1167v-30h70M302 1167v52h70" fill="none" stroke="#1686d9" stroke-width="6"/>
+  <path d="M372 1137h34" stroke="#1686d9" stroke-width="6" marker-end="url(#flowArrow)"/>
+  <path d="M372 1219h34" stroke="#1686d9" stroke-width="6" marker-end="url(#flowArrow)"/>
+  <rect x="416" y="1108" width="360" height="62" rx="16" fill="#eaf4ff"/><text x="596" y="1147" text-anchor="middle" class="block">直結系統</text>
+  <rect x="416" y="1188" width="360" height="62" rx="16" fill="#fff4e9"/><text x="596" y="1227" text-anchor="middle" class="block">受水槽系統</text>
+  <text x="76" y="1292" class="body">建物内で、直結する系統と貯留する系統を併用</text>
+  <text x="76" y="1330" class="small">どこを水槽経由にするかは、建物・計画で異なります。</text>
+
+  <rect x="40" y="1385" width="820" height="270" rx="24" fill="#15243b"/>
+  <text x="76" y="1435" style="fill:#9fc8ff" font-size="20" font-weight="800">方式を決める前に</text>
+  <text x="76" y="1482" style="fill:#fff" font-size="19" font-weight="650">水圧・高さ・水量・用途・維持管理を確認</text>
+  <text x="76" y="1518" style="fill:#fff" font-size="19" font-weight="650">水道事業者の供給能力と基準も照合</text>
+  <path d="M76 1545h748" stroke="#52647c" stroke-width="1.5"/>
+  <text x="76" y="1584" style="fill:#c8d6e5" font-size="16">直結増圧式はポンプ近くに有効な逆止弁を設置。</text>
+  <text x="76" y="1618" style="fill:#c8d6e5" font-size="16">一般例：減圧式逆流防止器。方式の採否は事業者基準で確認。</text>
+</svg>
