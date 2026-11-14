@@ -187,3 +187,19 @@ h1, h2, h3, p { margin-top: 0; }
 @media (max-width: 420px) {
   .diagram-image { flex-basis: 500px; height: 500px; }
 }
+
+/* Shared app identity and study companion. */
+.brand-icon { display: block; flex: 0 0 auto; width: 48px; height: 48px; border-radius: 13px; object-fit: cover; }
+.hero-visual { min-width: 0; }
+.mascot-intro { display: flex; justify-content: center; align-items: center; gap: 12px; margin: -36px 0 8px; }
+.mascot-intro img { width: clamp(140px, 16vw, 210px); height: auto; object-fit: contain; }
+.mascot-intro p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.7; }
+.mascot-intro strong { color: var(--navy); font-size: 24px; }
+@media (max-width: 760px) {
+  .brand-icon { width: 40px; height: 40px; border-radius: 11px; }
+  .site-header { flex-wrap: wrap; gap: 12px; }
+  .site-header nav { flex-wrap: wrap; }
+  .mascot-intro { margin-top: 0; }
+  .mascot-intro img { width: 156px; }
+  .hero-card { box-sizing: border-box; }
+}
