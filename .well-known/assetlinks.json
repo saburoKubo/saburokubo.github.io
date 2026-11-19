@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.kubosaburo.kikenotsu4",
+      "sha256_cert_fingerprints": [
+        "E4:E5:FE:69:EE:27:1A:5C:B4:80:61:8C:75:F7:A9:89:23:4C:B6:DB:C4:98:0E:1E:AC:DE:0E:D6:15:34:FD:AD"
+      ]
+    }
+  }
+]
